@@ -7,7 +7,7 @@
 				'theme_location'  => 'primary',
 				'container'       => '',
 				'menu_id'         => 'menu-primary-items',
-				'menu_class'      => 'nav nav--banner',
+				'menu_class'      => 'global-nav nav--banner',
 				'fallback_cb'     => '',
 				'items_wrap'      => '<ul id="%s" class="%s">%s</ul>'
 			)
