@@ -1,0 +1,85 @@
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+
+img {
+  max-width: 100%; /* [1] */
+  font-style: italic; /* [2] */
+  vertical-align: middle; /* [3] */
+}
+
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+
+img[width], /* [1] */
+img[height] {  /* [1] */
+  max-width: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   #SVG Control
+   ========================================================================== */
+
+/**
+ * SVG Control area, colours, sizes and regions.
+ */
+
+
+
+
+/* SVG Sizing
+   ========================================================================== */
+
+.svg-icon {
+     width:1em; 
+     height:1em; 
+     position:relative; 
+     top:0; 
+}
+
+
+
+
+
+/* SVG Styling
+   ========================================================================== */
+
+.svg-icon-colour {
+    fill: $base-colour;
+	font-size: inherit;
+}
+
+
+
+
+
+/* Hide SVG Region
+   ========================================================================== */
+
+.svg-region{
+	display: none;
+}
+
+
+

@@ -1,0 +1,73 @@
+/* ==========================================================================
+   #Site Global Sizes
+   ========================================================================== */
+
+/**
+ * Main sizes used throughout the site.
+ * Indivial aspects maybe within page specific sass files.
+ *
+ */
+
+
+
+/* Global Width 
+   ========================================================================== */
+
+$global-site-width: 1205px !default;
+
+
+
+
+
+/* Grid Settings 
+   ========================================================================== */
+
+$toast-gutter-width: 20px !default;
+$toast-breakpoint-medium: 740px !default;
+$toast-breakpoint-small: 320px !default;
+
+$desktop-side-pad: 20px;
+$mobile-side-pad: 30px;
+
+
+
+
+
+/* Navigation Spacing
+   ========================================================================== */
+
+$nav-horizontal-gap: 	20px !default;
+$nav-vertical-gap: 		20px !default;
+
+
+
+
+
+/* Social Icons
+   ========================================================================== */
+   
+$social-icon-width: 			27px!default;
+$social-icon-height: 		27px!default;
+
+
+
+
+
+
+/* Site Specific Spacing
+   ========================================================================== */
+
+/* Border-Width*/
+$global-border-width: 2px;
+
+/* Border-Radius*/
+$global-border-radius: 5px;
+
+
+/* Header*/
+$site-header-padding: 25px;
+
+/* Footer*/
+$site-footer-padding: 35px;
+
+

@@ -1,0 +1,53 @@
+/* ==========================================================================
+   #SOCIAL ICON SIZING
+   ========================================================================== */
+
+
+
+/* Social Icons Row
+   ========================================================================== */
+
+
+
+.icons-row{
+	font-size: 0;
+}
+
+
+
+
+
+/* Social Icons A link Block
+   ========================================================================== */
+
+
+
+
+.icons-row-block a{
+		text-decoration: none;
+		@include vendor(transition, $global-transition);
+		@include font-size(14px);
+		height: $social-icon-height;
+		line-height: $social-icon-height;
+		display: inline-block;
+		vertical-align: baseline;
+		width: $social-icon-width;
+		text-align: center;
+		position: relative;
+		border-width: $global-border-width;
+		border-style: solid;
+		border-color: blue;
+		-webkit-tap-color: blue;
+		color: red;
+		@include flex-center;
+		
+		&:hover{
+		background-color: green;
+		color: white;
+		}
+		
+	}
+
+
+
+

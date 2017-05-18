@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #Z-INDEX ORDER
+   ========================================================================== */
+
+/**
+ * A simple order for any z-index elements used.
+ *
+ */
+ 
+ 
+$zindex-bottom: 1010;     // Ads
+$zindex-lower: 1015; // Modals and overlays inside content
+$zindex-middle: 1020;  // Sticky header
+$zindex-medium-high: 1030;   // Search modal
+$zindex-high: 1040; // Breaking news
+$zindex-highest: 1050; // Lightbox

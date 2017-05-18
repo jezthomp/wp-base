@@ -1,0 +1,76 @@
+/* ==========================================================================
+   #NAVIGATION
+   ========================================================================== */
+
+
+/**
+ * Default inline navigation
+ */
+
+
+
+.global-nav{
+	font-size: 0;
+    list-style:none;
+    margin-left:0;
+    @include clearfix();
+    width: 100%;
+
+    > li{
+
+        &,
+        > a{
+            display:inline-block;
+           *display:inline;
+            zoom:1;
+            height: 100%;
+            @include font-size(16px);
+            text-decoration: none;
+        }
+    }
+
+}   
+
+
+
+
+/* Navigation With Divided Line
+   ========================================================================== */
+
+.nav-divide-line li:not(:last-child) {
+  border-right: 1px solid #666;
+  margin-right: $nav-horizontal-gap;
+  padding-right: $nav-horizontal-gap;
+}
+
+
+
+
+
+
+/* Stacked Navigation
+   ========================================================================== */
+   
+   .nav--stacked{
+
+    > li{
+        display:list-item;
+
+        > a{
+            display:block;
+        }
+    }
+}
+
+
+
+
+
+/* Inline Centered Navigation
+   ========================================================================== */
+
+.nav--banner{
+    text-align:center;
+}
+
+

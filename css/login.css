@@ -1,0 +1,41 @@
+
+/*------------------------------------*\
+    $LOGIN
+\*------------------------------------*/
+
+/*body.login{
+	background-color: red;
+}*/
+
+/*#login{
+	 padding: 11% 0 0;
+}
+
+#login h1 a {	
+	background-image:url(images/login_logo.svg);
+	width:280px;
+	height:26px;
+	margin-bottom: 45px;
+	background-position: center top;
+	    background-repeat: no-repeat;
+	    background-size: 280px auto;
+	    display: block;
+	}
+	*/
+	
+
+/*@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  
+ #login h1 a {	
+ 	background:url(../imgs/login_logo@2x.png) 0 0 no-repeat;
+ 	background-size: 208px 30px;
+ 	}
+ 	
+
+}	*/

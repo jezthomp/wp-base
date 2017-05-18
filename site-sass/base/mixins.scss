@@ -1,0 +1,166 @@
+/* ==========================================================================
+   #MAIN MIXINS
+   ========================================================================== */
+
+/**
+ * Main Mixins Used 
+ *
+ */
+
+
+/* Vender Prefix
+   ========================================================================== */
+   
+   
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+    -moz-#{$property}:$value;
+    -ms-#{$property}:$value;
+    -o-#{$property}:$value;
+    #{$property}:$value;
+}
+
+
+
+
+
+/* Flexbox Center 
+   ========================================================================== */
+   
+@mixin flex-center{
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+	
+}
+
+
+
+
+
+/* Clearfix
+   ========================================================================== */
+   
+@mixin clearfix($important: false) {
+
+  // Determine whether or not to make declarations important.
+  @if ($important == false) {
+    $important: null;
+  } @else {
+    $important: !important;
+  }
+
+  &:after {
+    content: "" $important;
+    display: table $important;
+    clear: both $important;
+  }
+
+}
+
+
+
+
+
+/* Type Size (old version)
+   ========================================================================== */
+
+/*@mixin font-size($size: 1.6) {
+     font-size: ($size * 10) + px;
+     font-size: $size + rem;
+}*/
+
+
+
+
+/* Type Weight
+   ========================================================================== */
+   
+@mixin font-weight($weight) {
+
+  @if ($weight == normal) {
+    font-weight: 400;
+  }
+
+  @elseif ($weight == bold) {
+    font-weight: 700;
+  }
+
+  @elseif ($weight == black) {
+    font-weight: 900;
+  }
+
+  @else {
+    @warn "#{$weight} is not a valid font-weight."
+  }
+
+}
+
+
+/* Shorthand Fontstack
+   ========================================================================== */
+   
+@mixin font-family($family) {
+
+  @if ($family == "sans-serif") {
+    font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  @elseif ($family == "serif") {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+  }
+
+  @else {
+    @warn "#{$family} is not a valid font-family."
+  }
+
+}
+
+
+
+
+
+/* Animation Mixins 
+   ========================================================================== */
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+	/* Usage */
+	
+	@mixin animation($str) {
+	  -webkit-animation: #{$str};
+	  -moz-animation: #{$str};
+	  -ms-animation: #{$str};
+	  -o-animation: #{$str};
+	  animation: #{$str};      
+	}
+
+
+
+
+
+/* Hover & Focus Styles in one.
+   ========================================================================== */
+
+@mixin hocus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
