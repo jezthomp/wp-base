@@ -1,6 +1,38 @@
-/* === Body Styles === */
+/* ==========================================================================
+   #SITE WIDE SPECIFIC STYLES
+   ========================================================================== */
 
 
-body{
-	background:url(../images/build/body_behind2.jpg) repeat fixed
+
+/* Inner Page Wrapper
+   ========================================================================== */
+
+
+@mixin site-inner-wrap {
+  	@include clearfix();
+  	max-width: $global-site-width;
+	padding-left: $mobile-side-pad;
+	padding-right: $mobile-side-pad;
+  	margin-right: auto;
+  	margin-left:  auto;
+  
+  
+  @include mq(tablet) {
+  	padding-left: $desktop-side-pad;
+  	padding-right: $desktop-side-pad;
+  }
+      
+  
+}
+
+.site-main__inner{
+	@include site-inner-wrap;
+	
+	@include mq($until: tablet) {
+	
+		padding-left: 0;
+		padding-right: 0;
+		
+	}
+	
 }
