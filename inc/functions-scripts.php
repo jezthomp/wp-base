@@ -9,7 +9,6 @@
 # Add custom scripts and styles
 add_action( 'wp_enqueue_scripts', 'wp_base_enqueue_scripts', 5 );
 add_action( 'wp_enqueue_scripts', 'wp_base_enqueue_styles',  5 );
-add_action( 'wp_enqueue_scripts', 'fuse_design_dequeue_dashicon',  5 );
 
 # Remove Unwanted Scripts
 add_action('init','wp_base_unused_scripts');
@@ -29,19 +28,6 @@ function remove_cssjs_ver( $src ) {
 add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
 add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 
-/**
- * Remove dashicons front end.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-function fuse_design_dequeue_dashicon() {
-	if (current_user_can( 'update_core' )) {
-	    return;
-	}
-	wp_deregister_style('dashicons');
-}
 
 
 /**
@@ -58,7 +44,7 @@ function wp_base_enqueue_scripts() {
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr-3.3.1.min.js', array('jquery'), '3.3.1', true );
 	
 	//https://github.com/aFarkas/lazysizes
-	wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/js/vendor/lazysizes-umd.min.js', '2.0.0', null,  true );
+	wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/js/vendor/lazysizes.min.js', '4.0.0', null,  true );
 	
 	
 	//Contact Page

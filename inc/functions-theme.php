@@ -11,8 +11,12 @@ add_action( 'init', 'wp_base_register_image_sizes', 5 );
 # Register custom menus.
 add_action( 'init', 'wp_base_register_menus', 5 );
 
+
+# Custom Projects Archive Query.
+add_action( 'pre_get_posts', 'projects_query_order', 5 );
+
 # Remove Annoying emoji styles.
-add_action( 'init', 'pw_remove_emojicons' );	
+add_action( 'init', 'wp_base_remove_emojicons' );	
 
 
 /**
@@ -80,7 +84,7 @@ add_filter( 'nav_menu_css_class', 'custom_active_item_classes', 10, 2 );
  * @access public
  * @return void
  */
-function pw_remove_emojicons() 
+function wp_base_remove_emojicons() 
 {
     // Remove from comment feed and RSS
     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
@@ -99,7 +103,30 @@ function pw_remove_emojicons()
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
     remove_action( 'admin_print_styles', 'print_emoji_styles' );
 }
-add_action( 'init', 'pw_remove_emojicons' );
+
+
+
+
+
+/**
+ * Custom Projects Archive Order
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+
+ function projects_query_order($query){
+        if( ! is_admin() && is_post_type_archive( 'project-work') && $query->is_main_query()  ):
+	        		$query->set( 'meta_key', 'projects_order' );
+                   	$query->set( 'orderby', 'meta_value_num' );
+                   	$query->set( 'order', 'ASC' );
+                   	$query->set( 'posts_per_page', -1 );
+        endif;    
+};
+
+
+
 
 /**
  * Remove Roles from Elements
