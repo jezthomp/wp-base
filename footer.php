@@ -21,13 +21,20 @@
 		
 		<p class="footer_details"><?php bloginfo('name'); ?>  &copy; <?php echo date("Y"); ?></p>
 		
+		<?php get_template_part( 'template-parts/social/company', 'social' ); ?>
+		
 		</div> <!--site-footer__inner-->
 		
 		
 	</footer><!-- #footer -->
 </div><!-- #page -->
 
+
+
+
 <?php wp_footer(); ?>
 
+
+<?php get_template_part( 'template-parts/social/icon', 'import' ); ?>
 </body>
 </html>

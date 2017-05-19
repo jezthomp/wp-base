@@ -9,8 +9,17 @@
 
 
 
-.icons-row{
-	font-size: 0;
+
+/**
+ * Even spacing row of icons list.
+ */		
+ 
+.icons-row__list{
+	@include flexbox;
+	@include justify-content(space-between);
+	margin:  0;
+	   padding: 0;
+	   list-style: none;
 }
 
 
@@ -23,7 +32,7 @@
 
 
 
-.icons-row-block a{
+.icons--block a{
 		text-decoration: none;
 		@include vendor(transition, $global-transition);
 		@include font-size(14px);
