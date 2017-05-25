@@ -12,11 +12,7 @@ get_header();
 
 	
 	<div class="site-main__inner">
-	<?php $video = get_header_video_url()
-				
-				echo($video)
-				 ?>
-				
+	
 	
 	<?php if ( have_posts() ) : ?>
 	 
