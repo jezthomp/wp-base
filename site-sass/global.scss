@@ -21,12 +21,16 @@
    
 @import 'base/reset'; 
 @import 'base/root'; 
-@import 'base/mq';  
+@import 'base/mq';
+@import 'base/vars.sizes';
 @import 'base/mixins'; 
 @import 'base/flexbox_mixins'; 
 @import 'base/type';   
-@import 'base/vars.sizes';
+
 @import 'base/toast.grid';  
+
+
+   
 
    
 /* ==========================================================================

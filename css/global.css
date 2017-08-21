@@ -190,21 +190,6 @@ a, area, button, input, label, select, summary, textarea, [tabindex] { -ms-touch
 /** Simple page-level setup. 1. Set the default `font-size` and `line-height` for the entire project, sourced from our default variables. The `font-size` is calculated to exist in ems, the `line-height` is calculated to exist unitlessly. 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when navigating between pages that do/do not have enough content to produce scrollbars naturally. 3. Ensure the page always fills at least the entire height of the viewport. */
 html { font-size: 1em; /* [1] */ line-height: 1.5; /* [1] */ overflow-y: scroll; /* [2] */ min-height: 100%; /* [3] */ }
 
-/* ========================================================================== #MAIN MIXINS ========================================================================== */
-/** Main Mixins Used  */
-/* Vender Prefix ========================================================================== */
-/* Inner Page Wrapper ========================================================================== */
-/*@include site-inner-wrap;*/
-/* Flexbox Center  ========================================================================== */
-/* Clearfix ========================================================================== */
-/* Type Size (old version) ========================================================================== */
-/*@mixin font-size($size: 1.6) { font-size: ($size * 10) + px; font-size: $size + rem; }*/
-/* Type Weight ========================================================================== */
-/* Shorthand Fontstack ========================================================================== */
-/* Animation Mixins  ========================================================================== */
-/* Usage */
-/* Hover & Focus Styles in one. ========================================================================== */
-/* ========================================================================== #FLEXBOX MIXINS ========================================================================== */
 /* ========================================================================== #Site Global Sizes ========================================================================== */
 /** Main sizes used throughout the site. Indivial aspects maybe within page specific sass files. */
 /* Global Width  ========================================================================== */
@@ -216,6 +201,26 @@ html { font-size: 1em; /* [1] */ line-height: 1.5; /* [1] */ overflow-y: scroll;
 /* Border-Radius*/
 /* Header*/
 /* Footer*/
+/* ========================================================================== #MAIN MIXINS ========================================================================== */
+/** Main Mixins Used  */
+/* Vender Prefix ========================================================================== */
+/* Clearfix ========================================================================== */
+/* Inner Page Wrapper ========================================================================== */
+.site-inner-wrap { max-width: 1205px; padding-left: 30px; padding-right: 30px; margin-right: auto; margin-left: auto; }
+
+.site-inner-wrap:after { content: ""; display: table; clear: both; }
+
+@media (min-width: 46.25em) { .site-inner-wrap { padding-left: 20px; padding-right: 20px; } }
+
+/* Flexbox Center  ========================================================================== */
+/* Type Size (old version) ========================================================================== */
+/*@mixin font-size($size: 1.6) { font-size: ($size * 10) + px; font-size: $size + rem; }*/
+/* Type Weight ========================================================================== */
+/* Shorthand Fontstack ========================================================================== */
+/* Animation Mixins  ========================================================================== */
+/* Usage */
+/* Hover & Focus Styles in one. ========================================================================== */
+/* ========================================================================== #FLEXBOX MIXINS ========================================================================== */
 /* An insane grid. You'd be mad to use it. Usage ===== Assuming default values: <div class="grid"> <div class="grid__col grid__col--1-of-2"> A half-width column. </div> <div class="grid__col grid__col--1-of-4 grid__col--pull-1-of-4"> A quarter, pulled left by its own width. You get this, right? </div> </div> Customisation ============= $toast-grid-namespace and $toast-grid-column-namespace adjusts the class names for the grid. With default values, grid wrappers have a class of '.grid' and columns '.grid__col'. $toast-col-groups(n) adjusts column divisions. For example, $toast-col-groups(12) will produce a 12-column grid. $col-groups(3,6,8) will produce a 3-, 6-, and 8-column grid. $toast-gutter-width is—you guessed it—the gutter width. Accepts any unit. That's it. Have fun.*/
 .grid { list-style: none; margin-left: -20px; }
 

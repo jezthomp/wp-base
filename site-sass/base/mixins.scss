@@ -21,6 +21,27 @@
 }
 
 
+/* Clearfix
+   ========================================================================== */
+   
+@mixin clearfix($important: false) {
+
+  // Determine whether or not to make declarations important.
+  @if ($important == false) {
+    $important: null;
+  } @else {
+    $important: !important;
+  }
+
+  &:after {
+    content: "" $important;
+    display: table $important;
+    clear: both $important;
+  }
+
+}
+
+
 /* Inner Page Wrapper
    ========================================================================== */
 
@@ -43,7 +64,11 @@
 }
 
 
-/*@include site-inner-wrap;*/
+.site-inner-wrap{
+	@include site-inner-wrap;
+}
+
+
 
 
 
@@ -59,28 +84,6 @@
 }
 
 
-
-
-
-/* Clearfix
-   ========================================================================== */
-   
-@mixin clearfix($important: false) {
-
-  // Determine whether or not to make declarations important.
-  @if ($important == false) {
-    $important: null;
-  } @else {
-    $important: !important;
-  }
-
-  &:after {
-    content: "" $important;
-    display: table $important;
-    clear: both $important;
-  }
-
-}
 
 
 

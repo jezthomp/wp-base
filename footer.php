@@ -35,6 +35,5 @@
 <?php wp_footer(); ?>
 
 
-<?php get_template_part( 'template-parts/social/icon', 'import' ); ?>
 </body>
 </html>
