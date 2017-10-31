@@ -15,21 +15,38 @@
 get_header(); ?>
 
 	
-		<main <?php hybrid_attr( 'content' ); ?>>
+<main <?php hybrid_attr( 'content' ); ?>>
 
-			<?php
-			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			
+			<div class="site-inner-wrap">
+					
+				
+								
+								<?php if ( have_posts() ) : ?>
+								 
+								 	<?php while ( have_posts() ) : the_post(); ?>
+								
+								
+																
+										<h1 class="page-title__main"><?php single_post_title(); ?></h1>
+										
+																		
+									<?php endwhile; ?>
+										 	
+									
+								<?php endif;  wp_reset_query(); ?>
+							
+					
+				
+				
+			</div> <!--site-inner-wrap-->
+	
+	
+		
 
-			endwhile; // End of the loop.
-			?>
+</main>
 
-		</main><!-- #main -->
 
 <?php get_footer(); ?>

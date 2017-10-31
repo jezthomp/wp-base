@@ -31,6 +31,8 @@ body { margin: 0; }
 /** Correct the font size and margin on `h1` elements within `section` and `article` contexts in Chrome, Firefox, and Safari. */
 h1 { font-size: 2em; margin: .67em 0; }
 
+a { word-wrap: break-word; }
+
 /* Grouping content (https://html.spec.whatwg.org/multipage/semantics.html#grouping-content) ========================================================================== */
 /** Add the correct display in IE 9-. 1. Add the correct display in IE. */
 figcaption, figure, main { /* 1 */ display: block; }
@@ -43,6 +45,8 @@ hr { box-sizing: content-box; /* 1 */ height: 0; /* 1 */ overflow: visible; /* 2
 
 /** Remove the list style on navigation lists in all browsers (opinionated). */
 nav ol, nav ul { list-style: none; }
+
+ul, li { list-style: none; margin: 0; padding: 0; }
 
 /** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */
 pre { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
@@ -409,7 +413,7 @@ html { font-size: 1em; /* [1] */ line-height: 1.5; /* [1] */ overflow-y: scroll;
 /* ========================================================================== #BUTTONS ========================================================================== */
 /** Button base sizes */
 /** 1. Allow us to style box model properties. 2. Line different sized buttons up a little nicer. 3. Make buttons inherit font styles (often necessary when styling `input`s as buttons). 4. Reset/normalize some styles. 5. Force all button-styled elements to appear clickable. */
-.main-btn { display: inline-block; /* [1] */ vertical-align: middle; /* [2] */ font: inherit; /* [3] */ text-align: center; /* [4] */ margin: 0; /* [4] */ cursor: pointer; /* [5] */ padding: 20px; border-radius: 5px; -webkit-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); -moz-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); -ms-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); -o-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); }
+.main-btn { display: inline-block; /* [1] */ vertical-align: middle; /* [2] */ font: inherit; /* [3] */ text-align: center; /* [4] */ margin: 0; /* [4] */ cursor: pointer; /* [5] */ padding: 20px; border-radius: 7px; -webkit-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); -moz-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); -ms-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); -o-transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); transition: all 450ms cubic-bezier(0.645, 0.045, 0.355, 1); }
 
 .main-btn:hover, .main-btn:focus { text-decoration: none; }
 
@@ -454,10 +458,6 @@ img[width], img[height] { /* [1] */ max-width: none; }
 
 /* ========================================================================== #DEFAULT FORM LAYOUTS ========================================================================== */
 /** A basic form reset */
-fieldset { margin: 0 0 1.5rem; padding: 1.5rem 1.5rem 0; border: 1px solid; }
-
-legend { padding: 0.375rem 1.5rem; border: 1px solid; }
-
 label { font-size: 15px; font-size: 0.9375rem; line-height: 1.6; cursor: pointer; }
 
 .label-checkbox, .label-radio { font-size: 1.125rem; }
@@ -466,21 +466,28 @@ input { display: block; }
 
 input[type="checkbox"], input[type="radio"] { display: inline-block; }
 
-input[type="number"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select { padding: 0.5rem 0.75rem; font-size: 15px; border: 2px solid; opacity: 0.75; box-sizing: border-box; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
+input[type="number"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select { font-size: 15px; font-size: 0.9375rem; line-height: 1.6; border: 1px solid; box-sizing: border-box; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; border-color: grey; background-color: white; padding: 10px; }
+
+@media (min-width: 46.25em) { input[type="number"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select { padding: 13px; } }
 
 input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select { width: 100%; }
 
-input[name="post_password"] { margin-bottom: 1.5rem; }
+textarea { min-height: 200px; }
 
-input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus, select:focus { opacity: 1; }
+/** Comment/Review Submit Button */
+input[type="submit"], input[type="reset"], input[type="button"] { width: 100%; font-size: 18px; font-size: 1.125rem; line-height: 1.3333333333; text-transform: uppercase; background-color: red; color: white; line-height: 1; border-radius: 4px; /*			padding-top: $site-header-padding - 5px; padding-bottom: $site-header-padding - 5px;*/ }
 
-input[type="submit"], input[type="reset"], input[type="button"], button, .edd-page a.button { display: inline-block; padding: 0.75rem 1rem; font-size: 15px; font-weight: 400; border: none; border-radius: 0; box-sizing: border-box; text-shadow: none; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="button"]:hover, input[type="button"]:focus { background-color: red; text-decoration: none; }
 
-input[type="submit"]:focus, input[type="submit"]:hover, input[type="reset"]:focus, input[type="reset"]:hover, input[type="button"]:focus, input[type="button"]:hover, button:focus, button:hover, .media-info-toggle:hover { text-decoration: underline; }
+@media (min-width: 46.25em) { input[type="submit"], input[type="reset"], input[type="button"] { /*width: 46.5%;*/ } }
 
-select { font-size: 15px; padding: 7px; }
+/** Ninja Form Form Holder */
+.nf-form-wrap.ninja-forms-form-wrap { background-color: grey; padding: 30px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; margin: 40px 0; }
 
-textarea { min-height: 300px; padding: 0.75rem; }
+/** Ninja Forms Required Fields Positioning */
+#ninja_forms_required_items, .nf-field-container { margin-bottom: 25px; padding-bottom: 25px; }
+
+.nf-after-field { position: absolute; bottom: 0; width: 100%; }
 
 /* ========================================================================== #SOCIAL ICON SIZING ========================================================================== */
 /* Social Icons Row ========================================================================== */
@@ -494,5 +501,14 @@ textarea { min-height: 300px; padding: 0.75rem; }
 
 /* ========================================================================== Site Specific ========================================================================== */
 /* ========================================================================== #SITE WIDE SPECIFIC STYLES ========================================================================== */
+/** Flexbox Rows */
+.grid-row { display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; -webkit-box-direction: normal; -webkit-box-orient: vertical; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+
+.grid-row > div { display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; }
+
+@media (min-width: 46.25em) { .grid-row { -webkit-box-direction: normal; -webkit-box-orient: horizontal; -webkit-flex-direction: row; -moz-flex-direction: row; -ms-flex-direction: row; flex-direction: row; } }
+
+.grid-row .grid__col { margin: 0; padding: 0; }
+
 /* ========================================================================== #SITE HEADER DETAILS ========================================================================== */
 /* ========================================================================== #SITE FOOTER DETAILS ========================================================================== */

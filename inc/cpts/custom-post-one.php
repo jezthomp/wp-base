@@ -1,71 +1,65 @@
 <?php
-register_extended_post_type( 'collection', array(
+add_action( 'init', function() {
+	register_extended_post_type( 'story', [
 
-    # Add the post type to the site's main RSS feed:
-    'show_in_feed' => true,
-    
-    'menu_icon' => 'dashicons-format-aside',
+		# Add the post type to the site's main RSS feed:
+		'show_in_feed' => true,
+		'menu_icon' => 'dashicons-format-aside',
+		# Show all posts on the post type archive:
+		'archive' => [
+			'nopaging' => true,
+		],
 
-    # Show all posts on the post type archive:
-    'archive' => array(
-        'nopaging' => true
-    ),
+		# Add some custom columns to the admin screen:
+		'admin_cols' => [
+			'story_featured_image' => [
+				'title'          => 'Illustration',
+				'featured_image' => 'thumbnail'
+			],
+			'story_published' => [
+				'title'       => 'Published',
+				'meta_key'    => 'published_date',
+				'date_format' => 'd/m/Y'
+			],
+			'story_genre' => [
+				'taxonomy' => 'genre'
+			],
+		],
 
-    # Add some custom columns to the admin screen:
-    'admin_cols' => array(
+		# Add a dropdown filter to the admin screen:
+		'admin_filters' => [
+			'story_genre' => [
+				'taxonomy' => 'genre'
+			],
+			'story_rating' => [
+				'meta_key' => 'star_rating',
+			],
+		],
 
-       
-        'acf' => array(
-        	'title'          => 'Sub Title',
-           'meta_key'    => 'sub_title'
-        ),
-        
-        'Mens/Boys' => array(
-             'taxonomy' => 'area'
-         ),
-         
-         'Finish' => array(
-              'taxonomy' => 'finish'
-          ),
-         
-          'date' => array(
-        	'title'          => 'Date',
-            'date'       => 'Date',
+	], [
 
-        )
-        
-    ),
+		# Override the base names used for labels:
+		'singular' => 'Story',
+		'plural'   => 'Stories',
+		'slug'     => 'stories',
 
-    # Add a dropdown filter to the admin screen:
-    'admin_filters' => array(
-        'ens/Boys' => array(
-            'taxonomy' => 'area'
-        )
-    )
+	] );
 
-), array(
+	register_extended_taxonomy( 'genre', 'story', [
 
-    # Override the base names used for labels:
-    'singular' => 'Collection',
-    'plural'   => 'Colletions',
-    'slug'     => 'collections'
+		# Use radio buttons in the meta box for this taxonomy on the post editing screen:
+		'meta_box' => 'radio',
 
-) );
+		# Add a custom column to the admin screen:
+		'admin_cols' => [
+			'updated' => [
+				'title'       => 'Updated',
+				'meta_key'    => 'updated_date',
+				'date_format' => 'd/m/Y'
+			],
+		],
 
-
-
-register_extended_taxonomy( 'finish',  array( 
-
-'collection' 
-
-), 
-array(
-
-    # Override the base names used for labels:
-    'singular' => 'Finish',
-    'plural'   => 'Finish',
-    'slug'     => 'finish'
-
-) );
+	] );
+} );
 
 ?>
